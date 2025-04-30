@@ -48,7 +48,6 @@ class Solution {
         for (int i : nums2) {
             set.add(i);
         }
-
         int [] unionArray = set.stream().mapToInt(x -> x).toArray();
         return unionArray;
     }
