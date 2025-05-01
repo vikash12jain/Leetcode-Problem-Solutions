@@ -51,17 +51,14 @@ public class Solution {
             current = current.next;
         }
 
-        // Handle cases where k is greater than the length of the list
         k = k % length;
-        if (k == 0) return head; // If no rotation is needed, return the head
+        if (k == 0) return head;
 
-        // Break the list and perform the rotation
-        prevcurrent.next = null; // Disconnect the last node
-        ListNode newHead = current; // The last node will be the new head
-        current.next = head; // Point the last node to the original head
-        head = newHead; // Update the head to the new head
+        prevcurrent.next = null; 
+        ListNode newHead = current;
+        current.next = head;
+        head = newHead;
 
-        // Now, we rotate (k-1) times since we have already moved the last element
         head = rotateRight(head, k - 1);
         return head;
     }
@@ -76,7 +73,7 @@ public class Solution {
         System.out.println("Original list:");
         traverse(head);
 
-        head = rotateRight(head, 1000); // Test with k > length
+        head = rotateRight(head, 1000); 
         System.out.println("List after rotation:");
         traverse(head);
     }
