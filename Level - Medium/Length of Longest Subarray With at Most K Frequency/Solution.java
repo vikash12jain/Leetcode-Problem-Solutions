@@ -17,8 +17,8 @@ class Solution {
         return maxLength;
     }
     public static void main(String[] args) {
-        int[] nums = {1,4,4,3};
-        int k = 1;
+        int[] nums = {1,2,1,2,1,3,2};
+        int k = 3;
         System.out.println(maxSubarrayLength(nums, k));
     }
 }
