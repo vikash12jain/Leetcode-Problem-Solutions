@@ -18,7 +18,7 @@ public class Solution{
                 for (String part : parts) {
                     max = Math.max(max, longestSubstring(part, k));
                 }
-                return max;
+                return max;   
             }
         }
 
