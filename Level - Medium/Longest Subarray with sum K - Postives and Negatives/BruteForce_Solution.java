@@ -6,7 +6,7 @@ public class BruteForce_Solution {
             for (int j = i; j < nums.length; j++) {
                 sum += nums[j];
                 count++;
-                if (sum == 4)
+                if (sum == k)
                     subArray = Math.max(subArray, count);
             }
         }
@@ -14,8 +14,9 @@ public class BruteForce_Solution {
     }
 
     public static void main(String[] args) {
-        int [] arr = {1,2,-2,1,3,-1,5,9};
-        // int[] arr = { 1, 2, -2,9, 1, 3, 5, -5, 1,-9, 1, -2,0 };
+        // int [] arr = {2,3,1,2,2,0,2,3};
+        // int [] arr = {1,2,-2,1,3,-1,5,9};
+        int[] arr = { 1, 2, -2,9, 1, 3, 5, -5, 1,-9, 1, -2,0 };
         System.out.println(MaxSubstringSumOfK(arr, 4));
     }
 }
