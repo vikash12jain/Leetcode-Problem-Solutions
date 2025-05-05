@@ -9,7 +9,7 @@ public class OptimalSolution {
        
         Map<Integer,Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            int moreNeededToMeetTarget = target - nums[i]; 
+            int moreNeededToMeetTarget = target - nums[i];  //moreNeededToMeetTarget : means needed more value to meet target like t = 5 and we have 2 now t-2 = 3 so 3 is more needed to meet target 
             if(map.containsKey(moreNeededToMeetTarget)){
                 arr[0] = map.get(moreNeededToMeetTarget);
                 arr[1] = i;
