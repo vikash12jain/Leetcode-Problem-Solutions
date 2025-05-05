@@ -1,32 +1,29 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class OptimalSolution {
     static public int[] Twosum(int[]nums,int target){
         int []arr = new int[2];
         arr[0]= arr[1] = -1;
-        Arrays.sort(nums);
-
-        int left = 0,right = nums.length-1;
-        while (left<right) {
-            int sum = (nums[left]+nums[right]);
-            if(sum==target){
-                arr[0] = left;
-                arr[1] = right;
-                return arr;
+       
+        Map<Integer,Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int moreNeededToMeetTarget = target - nums[i]; 
+            if(map.containsKey(moreNeededToMeetTarget)){
+                arr[0] = map.get(moreNeededToMeetTarget);
+                arr[1] = i;
             }
-            else if(sum < target){
-                left++;
-            }
-            else{
-                right--;
-            }
+            map.put(nums[i],i);
         }
+
+
 
         return arr;
     }
     public static void main(String[] args) {
-        int [] arr = {9,7,6,5,4,3,2,1};
-        for (int i : Twosum(arr, 16)) {
+        int [] arr = {0,9,7,6,5,4,3,2,1};
+        for (int i : Twosum(arr, 1)) {
             System.out.print(i + ",");
         }
     }
